@@ -2,11 +2,13 @@
 
 #include "displayapp/screens/Screen.h"
 #include <lvgl/lvgl.h>
-#include <FreeRTOS.h>
-#include <lvgl/src/lv_core/lv_obj.h>
-#include <string>
-#include "portmacro_cmsis.h"
-#include "systemtask/SystemTask.h"
+//#include "displayapp/screens/Screen.h"
+//#include <lvgl/lvgl.h>
+//#include <FreeRTOS.h>
+//#include <lvgl/src/lv_core/lv_obj.h>
+//#include <string>
+//#include "portmacro_cmsis.h"
+//#include "systemtask/SystemTask.h"
 
 namespace Pinetime {
   namespace Applications {
