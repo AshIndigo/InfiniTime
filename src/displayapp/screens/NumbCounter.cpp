@@ -18,32 +18,52 @@ NumbCounter::NumbCounter(DisplayApp* app) : Screen(app) {
   lv_style_set_bg_opa(&btn_style, LV_STATE_DEFAULT, LV_OPA_50);
 
   // Inc 1 Button
-  addObj(btnInc1);
+  btnInc1 = lv_btn_create(lv_scr_act(), nullptr);
+  btnInc1->user_data = this;
+  lv_obj_set_event_cb(btnInc1, event_handler);
+  lv_obj_set_size(btnInc1, 45, 45);
   lv_obj_align(btnInc1, nullptr, LV_ALIGN_IN_BOTTOM_RIGHT, -50, 0);
+  lv_obj_add_style(btnInc1, LV_STATE_DEFAULT, &btn_style);
   label = lv_label_create(btnInc1, nullptr);
   lv_label_set_text_static(label, "+1");
 
   // Inc 10 Button
-  addObj(btnInc10);
+  btnInc10 = lv_btn_create(lv_scr_act(), nullptr);
+  btnInc10->user_data = this;
+  lv_obj_set_event_cb(btnInc10, event_handler);
+  lv_obj_set_size(btnInc10, 45, 45);
   lv_obj_align(btnInc10, nullptr, LV_ALIGN_IN_BOTTOM_RIGHT, 0, 0);
+  lv_obj_add_style(btnInc10, LV_STATE_DEFAULT, &btn_style);
   label = lv_label_create(btnInc10, nullptr);
   lv_label_set_text_static(label, "+10");
 
   // Dec 1 Button
-  addObj(btnDec1);
+  btnDec1 = lv_btn_create(lv_scr_act(), nullptr);
+  btnDec1->user_data = this;
+  lv_obj_set_event_cb(btnDec1, event_handler);
+  lv_obj_set_size(btnDec1, 45, 45);
   lv_obj_align(btnDec1, nullptr, LV_ALIGN_IN_BOTTOM_LEFT, 50, 0);
+  lv_obj_add_style(btnDec1, LV_STATE_DEFAULT, &btn_style);
   label = lv_label_create(btnDec1, nullptr);
   lv_label_set_text_static(label, "-1");
 
   // Dec 10 Button
-  addObj(btnDec10);
+  btnDec10 = lv_btn_create(lv_scr_act(), nullptr);
+  btnDec10->user_data = this;
+  lv_obj_set_event_cb(btnDec10, event_handler);
+  lv_obj_set_size(btnDec10, 45, 45);
   lv_obj_align(btnDec10, nullptr, LV_ALIGN_IN_BOTTOM_LEFT, 0, 0);
+  lv_obj_add_style(btnDec10, LV_STATE_DEFAULT, &btn_style);
   label = lv_label_create(btnDec10, nullptr);
   lv_label_set_text_static(label, "-10");
 
   // Reset Button
-  addObj(btnReset);
+  btnReset = lv_btn_create(lv_scr_act(), nullptr);
+  btnReset->user_data = this;
+  lv_obj_set_event_cb(btnReset, event_handler);
+  lv_obj_set_size(btnReset, 45, 45);
   lv_obj_align(btnReset, nullptr, LV_ALIGN_IN_BOTTOM_MID, 0, 0);
+  lv_obj_add_style(btnReset, LV_STATE_DEFAULT, &btn_style);
   label = lv_label_create(btnReset, nullptr);
   lv_label_set_text_static(label, "X");
 
@@ -55,14 +75,6 @@ NumbCounter::NumbCounter(DisplayApp* app) : Screen(app) {
   lv_obj_align(count1Text, lv_scr_act(), LV_ALIGN_CENTER, 0, -45);
 
   taskRefresh = lv_task_create(RefreshTaskCallback, LV_DISP_DEF_REFR_PERIOD, LV_TASK_PRIO_MID, this);
-}
-
-void NumbCounter::addObj(lv_obj_t* obj) {
-  obj = lv_btn_create(lv_scr_act(), nullptr);
-  obj->user_data = this;
-  lv_obj_set_event_cb(obj, event_handler);
-  lv_obj_set_size(obj, 45, 45);
-  lv_obj_add_style(obj, LV_STATE_DEFAULT, &btn_style);
 }
 
 NumbCounter::~NumbCounter() {

@@ -22,7 +22,6 @@ namespace Pinetime {
         
       private:
         bool OnTouchEvent(TouchEvents event) override;
-        void addObj(lv_obj_t* obj);
         
         int count1 = 0;
         int count2 = 0;
