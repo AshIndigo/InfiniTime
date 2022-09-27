@@ -21,6 +21,7 @@ namespace Pinetime {
       Twos,
       HeartRate,
       Navigation,
+      NumbCounter,
       StopWatch,
       Metronome,
       Motion,

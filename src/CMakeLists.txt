@@ -386,6 +386,7 @@ list(APPEND SOURCE_FILES
         displayapp/screens/Music.cpp
         displayapp/screens/Weather.cpp
         displayapp/screens/Navigation.cpp
+        displayapp/screens/NumbCounter.cpp
         displayapp/screens/Metronome.cpp
         displayapp/screens/Motion.cpp
         displayapp/screens/FirmwareValidation.cpp
