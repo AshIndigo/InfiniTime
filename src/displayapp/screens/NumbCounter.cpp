@@ -1,7 +1,6 @@
 
 #include "displayapp/screens/NumbCounter.h"
 #include "displayapp/DisplayApp.h"
-#include <iostream>
 
 using namespace Pinetime::Applications::Screens;
 
